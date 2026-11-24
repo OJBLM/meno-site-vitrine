@@ -1,0 +1,17 @@
+{
+  "name": "Meno mon cycle — suivi du cycle et des symptômes",
+  "short_name": "Meno",
+  "description": "Suivez votre cycle et vos symptômes en douceur. Vos données restent sur votre téléphone.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbeee5",
+  "theme_color": "#fae2d4",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
