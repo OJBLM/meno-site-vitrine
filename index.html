@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meno mon cycle — Application, précommande, livre blanc, blog, marketplace &amp; annuaire</title>
+  <meta name="description" content="Meno mon cycle : précommande gratuite de l'application avec accès dès le lancement, newsletter, mon histoire, livre blanc téléchargeable, blog SEO, marketplace avec compte et annuaire des praticiens et soutiens." />
+  <meta name="theme-color" content="#fae2d4"[cite: 2] />
+  <link rel="icon" type="image/png" href="./favicon.png"[cite: 3, 11] />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png"[cite: 7, 15] />
+  <link rel="manifest" href="./manifest.webmanifest"[cite: 2] />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
 
+  <!-- Menu principal -->
+  <nav class="main-nav" aria-label="Navigation principale">
+    <a href="#accueil" class="nav-brand">
+      <img src="./favicon.png" alt="Logo Meno mon cycle" class="nav-logo"[cite: 3, 11] />
+      <span>Meno mon cycle</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#mon-histoire">Mon histoire</a></li>
+      <li><a href="#application">L'application</a></li>
+      <li><a href="#precommande-newsletter" class="btn-nav">Précommande gratuite</a></li>
+      <li><a href="#livre-blanc">Livre blanc</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#marketplace">Marketplace</a></li>
+      <li><a href="#annuaire">Annuaire</a></li>
+    </ul>
+  </nav>
+
+  <!-- En-tête -->
+  <header id="accueil" class="site-header">
+    <img src="./icon-512.png" alt="Emblème Meno mon cycle" class="site-logo"[cite: 5, 13] />
+    <h1>Meno mon cycle</h1>
+    <p class="subtitle">Suivi du cycle et des symptômes en douceur, précommande gratuite de l'application, newsletter, livre blanc, blog, marketplace et annuaire.</p>
+    <div class="hero-actions">
+      <a href="#precommande-newsletter" class="btn">Réserver l'accès gratuit au lancement</a>
+      <a href="#livre-blanc" class="btn btn-secondary">Livre blanc téléchargeable</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. Mon histoire -->
+    <section id="mon-histoire" class="card">
+      <h2>Mon histoire</h2>
+      <p>Présentation claire de mon parcours, de ce qui m'a poussée à lancer Meno mon cycle et de la démarche que je porte au quotidien.</p>
+      <p>Ce site propose des informations et des outils d'accompagnement doux. Il ne remplace en aucun cas un avis médical, un diagnostic ou une prise en charge médicale.</p>
+    </section>
+
+    <!-- 2. Direction vers l'application -->
+    <section id="application" class="card">
+      <h2>L'application Meno mon cycle</h2>
+      <p>Suivez votre cycle et vos symptômes en douceur, tout en gardant vos données sur votre téléphone[cite: 2].</p>
+      <div class="links-row">
+        <a href="#precommande-newsletter" class="btn">S'inscrire pour l'accès au lancement</a>
+        <a href="#lien-vers-application" class="btn btn-secondary">Découvrir l'aperçu de l'application</a>
+      </div>
+    </section>
+
+    <!-- 3. Précommande gratuite de l'application & Newsletter -->
+    <section id="precommande-newsletter" class="card highlight-card">
+      <h2>Précommande gratuite de l'application &amp; newsletter</h2>
+      <p>Inscrivez-vous gratuitement dès maintenant pour être prévenue dès le lancement de l'application et recevoir l'accès prévu à l'ouverture, ainsi que les actualités du projet et la newsletter.</p>
+
+      <form action="#traitement-inscription" method="post" class="signup-form">
+        <div class="form-group">
+          <label for="prenom">Prénom (facultatif)</label>
+          <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail *</label>
+          <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required autocomplete="email" />
+        </div>
+
+        <div class="form-checkboxes">
+          <label class="checkbox-item">
+            <input type="checkbox" name="precommande_app" value="oui" checked />
+            <span><strong>Précommande gratuite de l'application :</strong> je veux recevoir l'accès dès le lancement.</span>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="newsletter" value="oui" checked />
+            <span><strong>Newsletter :</strong> je souhaite recevoir les nouvelles de Meno mon cycle, du livre blanc et du blog.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Valider mon inscription gratuite</button>
+      </form>
+      <p class="form-note">Inscription gratuite et sans engagement. Aucun diagnostic médical n'est réalisé via ce site.</p>
+    </section>
+
+    <!-- 4. Livre blanc téléchargeable -->
+    <section id="livre-blanc" class="card">
+      <h2>Le livre blanc téléchargeable</h2>
+      <p>Un guide complet en cours de développement pour rassembler les repères clés, les explications claires et les pistes pratiques autour du cycle et du bien-être.</p>
+      <div class="links-row">
+        <a href="#telechargement-livre-blanc" class="btn">Télécharger le livre blanc</a>
+      </div>
+    </section>
+
+    <!-- 5. Marketplace & Ouverture de compte -->
+    <section id="marketplace" class="card">
+      <h2>La marketplace</h2>
+      <p>Retrouvez nos sélections bien-être, confort et solutions TENS pour accompagner le quotidien.</p>
+      <div class="grid-cards">
+        <article class="mini-card">
+          <h3>Bien-être &amp; solutions TENS</h3>
+          <p>Produits et accessoires sélectionnés pour le confort et l'apaisement au quotidien.</p>
+          <a href="#produits-tens" class="btn btn-secondary">Voir les produits</a>
+        </article>
+        <article class="mini-card">
+          <h3>Sélections du moment</h3>
+          <p>Essentiels du quotidien choisis avec soin pour la démarche Meno mon cycle.</p>
+          <a href="#selections" class="btn btn-secondary">Découvrir la sélection</a>
+        </article>
+      </div>
+
+      <div id="compte-marketplace" class="account-box">
+        <h3>Compte marketplace</h3>
+        <p>Ouvrez un compte pour accéder à vos achats, vos favoris et votre espace sur la marketplace.</p>
+        <div class="links-row">
+          <a href="#ouvrir-un-compte" class="btn">Ouvrir un compte</a>
+          <a href="#se-connecter" class="btn btn-secondary">Se connecter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Blog (SEO) -->
+    <section id="blog" class="card">
+      <h2>Le blog</h2>
+      <p>Des articles pensés pour le référencement (SEO) et pour répondre aux questions concrètes sur le cycle, les symptômes, le confort et le bien-être.</p>
+      <div class="grid-cards">
+        <article class="mini-card">
+          <h3>Article 1 — Comprendre son cycle et ses symptômes</h3>
+          <p>Repères simples et accessibles pour observer ses ressentis au fil du temps.</p>
+          <a href="#article-1" class="text-link">Lire l'article</a>
+        </article>
+        <article class="mini-card">
+          <h3>Article 2 — Bien-être, chaleur et TENS au quotidien</h3>
+          <p>Tour d'horizon pratique des solutions de confort non médicamenteuses.</p>
+          <a href="#article-2" class="text-link">Lire l'article</a>
+        </article>
+        <article class="mini-card">
+          <h3>Article 3 — Préparer ses échanges et s'informer</h3>
+          <p>Conseils utiles pour structurer ses notes et ses questions.</p>
+          <a href="#article-3" class="text-link">Lire l'article</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. Annuaire des praticiens et soutiens -->
+    <section id="annuaire" class="card">
+      <h2>Annuaire des praticiens &amp; soutiens</h2>
+      <p>Un annuaire en développement pour réunir les praticiens, professionnels et personnes qui soutiennent la démarche Meno mon cycle.</p>
+      <div class="links-row">
+        <a href="#voir-annuaire" class="btn">Consulter l'annuaire</a>
+        <a href="#soutenir-ou-apparaitre" class="btn btn-secondary">Rejoindre / Soutenir la démarche</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="./favicon.png" alt="Icône Meno mon cycle" class="footer-logo"[cite: 3, 11] />
+    <p>Meno mon cycle — Espace informatif, précommande gratuite, application, livre blanc, blog, marketplace et annuaire.</p>
+    <p class="footer-links">
+      <a href="#pinterest">Pinterest</a> ·
+      <a href="#mentions-legales">Mentions légales</a> ·
+      <a href="#confidentialite">Confidentialité</a>
+    </p>
+  </footer>
+
+</body>
+</html>
