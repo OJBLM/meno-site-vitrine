@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  --radius: 1rem;
+  --background: #fcf7f4;
+  --foreground: #462336;
+  --card: #fffdfc;
+  --card-foreground: #462336;
+  --brand-plum: #6d244b;
+  --primary: #6d244b;
+  --primary-foreground: #fdfaf8;
+  --secondary: #f6e4d8;
+  --secondary-foreground: #6d244b;
+  --muted: #f4ece7;
+  --muted-foreground: #7a5c6c;
+  --accent: #eed6c6;
+  --accent-foreground: #4d253b;
+  --destructive: #b83227;
+  --destructive-foreground: #fdfaf8;
+  --border: #ead9ce;
+  --input: #e5d2c5;
+  --ring: #6d244b;
+
+  --peach: #e5a888;
+  --powder: #eed6c6;
+  --plum-deep: #4e243b;
+  --water: #5694b8;
+  --water-soft: #eef5f9;
+  --alert: #9e382b;
+  --alert-soft: #faeae7;
+
+  --gradient-dawn: linear-gradient(170deg, var(--secondary) 0%, var(--background) 100%);
+  --gradient-plum: linear-gradient(135deg, var(--primary) 0%, var(--peach) 100%);
+  --gradient-header: linear-gradient(170deg, #f3dce0 0%, #f8eceb 55%, var(--background) 100%);
+  --header-foreground: #fdfaf8;
+  --shadow-soft: 0 12px 32px -18px rgba(109, 36, 75, 0.45);
+  --shadow-float: 0 -10px 36px -20px rgba(109, 36, 75, 0.5);
+
+  --font-sans: "Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--gradient-dawn);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--plum-deep);
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--plum-deep);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-dawn {
+  background-image: var(--gradient-dawn);
+}
+
+.bg-brand-header {
+  background-image: var(--gradient-header);
+}
+
+.bg-plum-gradient {
+  background-image: var(--gradient-plum);
+  color: var(--primary-foreground);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@keyframes meno-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: meno-rise 0.45s ease-out both;
+}
