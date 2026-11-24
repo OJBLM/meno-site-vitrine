@@ -2,394 +2,308 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Meno mon cycle — Application, précommande, livre blanc, blog, marketplace &amp; annuaire</title>
-  <meta name="description" content="Meno mon cycle : précommande gratuite de l'application avec accès dès le lancement, newsletter, mon histoire, livre blanc téléchargeable, blog SEO, marketplace avec compte et annuaire des praticiens et soutiens." />
-  <meta name="theme-color" content="#fae2d4" />
+  <meta name="description" content="Meno mon cycle : précommande gratuite de l'application avec accès dès le lancement, newsletter, mon histoire, livre blanc téléchargeable, blog, marketplace et annuaire des praticiens et soutiens." />
+  <meta name="theme-color" content="#ffd5e1" />
 
-  <!-- Favicon & icônes -->
-  <link rel="icon" href="./favicon bonne version" />
+  <!-- Icônes : renomme ton fichier « favicon bonne version » en favicon.png (sans espaces) -->
+  <link rel="icon" href="./favicon.png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
 
-  <!-- Polices Google Fonts (Fraunces & Nunito) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS intégré directement dans index.html -->
   <style>
+    /* ===== Palette issue de l'application Meno (pêche + prune) ===== */
     :root {
+      color-scheme: light;
       --peach: #e5a888;
-      --plum: #6d244b;
-      --plum-deep: #4e1734;
-      --background: #fff9f6;
+      --plum: #8a1750;
+      --plum-deep: #4a1630;
+      --background: #fff6f1;
       --foreground: #2f1824;
-      --card: #ffffff;
+      --card: #fffdfc;
       --muted-foreground: #6a4c5c;
-      --secondary: #fae2d4;
+      --secondary: #ffddd0;
       --accent: #f4cbb4;
-      --border: #edd3c4;
+      --border: #efd2cb;
       --input: #d9b6a3;
-      --radius: 1rem;
-      --shadow-soft: 0 10px 25px -10px rgba(109, 36, 75, 0.16);
-      --gradient-header: linear-gradient(155deg, #fae2d4 0%, #fff9f6 60%, #f4cbb4 100%);
+      --primary-foreground: #fff9f6;
+      --alert: #a3321f;
+      --ok: #2f6b4f;
+      --radius: 1.75rem;
+      --shadow-soft: 0 14px 34px -20px rgba(109, 36, 75, 0.45);
+      --gradient-header: linear-gradient(175deg, #ffd5e1 0%, #ffe8e8 55%, var(--background) 100%);
       --font-display: "Fraunces", Georgia, serif;
-      --font-sans: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: "Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
     body {
       margin: 0;
       font-family: var(--font-sans);
-      background-color: var(--background);
-      color: var(--foreground);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      color: var(--plum);
-      line-height: 1.25;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-      margin-bottom: 0.75rem;
-    }
-
-    h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin-top: 0;
-      margin-bottom: 0.9rem;
-    }
-
-    a {
-      color: var(--plum);
-      transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--plum-deep);
-    }
-
-    /* Navigation principale */
-    .main-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.85rem 1.5rem;
-      background: rgba(255, 253, 252, 0.94);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.15rem;
-      color: var(--plum);
-      text-decoration: none;
-    }
-
-    .nav-logo,
-    .footer-logo {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.65rem 1.15rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      font-size: 0.92rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .btn-nav {
-      background: var(--plum);
-      color: #ffffff !important;
-      padding: 0.45rem 0.95rem;
-      border-radius: 999px;
-    }
-
-    .btn-nav:hover {
-      background: var(--plum-deep);
-    }
-
-    /* En-tête */
-    .site-header {
-      text-align: center;
-      padding: 3rem 1.5rem 2.5rem;
-      background: var(--gradient-header);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .site-logo {
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-      margin: 0 auto 1rem;
-      display: block;
-    }
-
-    .subtitle {
-      max-width: 650px;
-      margin: 0.75rem auto 1.5rem;
-      color: var(--muted-foreground);
-      font-size: 1.05rem;
-    }
-
-    .hero-actions,
-    .links-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    /* Boutons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1.35rem;
-      border-radius: var(--radius);
-      background: var(--plum);
-      color: #ffffff;
-      font-weight: 700;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn:hover {
-      background: var(--plum-deep);
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: var(--secondary);
-      color: var(--plum);
-      box-shadow: none;
-      border: 1px solid var(--peach);
-    }
-
-    .btn-secondary:hover {
-      background: var(--accent);
-      color: var(--plum-deep);
-    }
-
-    /* Conteneur & cartes */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .highlight-card {
-      background: linear-gradient(165deg, #ffffff 0%, var(--secondary) 100%);
-      border-color: var(--peach);
-    }
-
-    .grid-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .mini-card,
-    .account-box {
       background: var(--background);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) - 4px);
-      padding: 1.15rem;
-    }
-
-    .account-box {
-      margin-top: 1.25rem;
-    }
-
-    /* Formulaire */
-    .signup-form {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .form-group {
-      display: grid;
-      gap: 0.35rem;
-    }
-
-    .form-group label {
-      font-weight: 700;
-      font-size: 0.92rem;
-      color: var(--plum);
-    }
-
-    .form-group input {
-      padding: 0.7rem 0.9rem;
-      border-radius: 0.65rem;
-      border: 1px solid var(--input);
-      background: #ffffff;
       color: var(--foreground);
-      font-family: inherit;
-      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+    h1, h2, h3 { font-family: var(--font-display); color: var(--plum); line-height: 1.2; margin: 0 0 .75rem; font-weight: 600; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.45rem, 2.6vw, 1.9rem); }
+    h3 { font-size: 1.12rem; }
+    p { margin: 0 0 .9rem; max-width: 62ch; }
+    a { color: var(--plum); }
+    a:hover { color: var(--plum-deep); }
+    :focus-visible { outline: 3px solid var(--peach); outline-offset: 3px; border-radius: 6px; }
+    section[id], header[id] { scroll-margin-top: 5rem; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -4rem; z-index: 100;
+      background: var(--plum); color: var(--primary-foreground);
+      padding: .6rem 1rem; border-radius: 999px; text-decoration: none; font-weight: 700;
+    }
+    .skip-link:focus { top: .75rem; }
+
+    /* ===== Navigation ===== */
+    .main-nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: .7rem 1.25rem; padding-top: calc(.7rem + env(safe-area-inset-top, 0));
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; text-decoration: none; }
+    .nav-logo, .footer-logo { width: 30px; height: 30px; object-fit: contain; border-radius: 50%; }
+    .nav-toggle {
+      display: none; background: none; border: 1px solid var(--border); border-radius: .7rem;
+      padding: .45rem .7rem; color: var(--plum); font: inherit; font-weight: 700; cursor: pointer;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.1rem; list-style: none; margin: 0; padding: 0; font-size: .93rem; }
+    .nav-links a { text-decoration: none; font-weight: 700; padding: .25rem 0; border-bottom: 2px solid transparent; }
+    .nav-links a.active { border-bottom-color: var(--peach); }
+    .nav-links a.btn-nav {
+      background: var(--plum); color: #fff; padding: .45rem 1rem; border-radius: 999px; border-bottom: none;
+    }
+    .nav-links a.btn-nav:hover { background: var(--plum-deep); color: #fff; }
+
+    /* ===== En-tête : seul moment animé de la page ===== */
+    .site-header {
+      text-align: center; padding: 3.5rem 1.5rem 3rem;
+      background:
+        radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--peach) 28%, transparent) 0%, transparent 70%),
+        var(--gradient-header);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 0 2.5rem 2.5rem;
+    }
+    .site-logo {
+      width: 112px; height: 112px; object-fit: contain; margin: 0 auto 1.1rem; display: block;
+      animation: logo-in .9s ease-out both, logo-breathe 4s ease-in-out .9s infinite;
+    }
+    .site-header h1 { animation: rise .6s ease-out .35s both; }
+    .subtitle { margin: .5rem auto 1.5rem; max-width: 40rem; color: var(--muted-foreground); font-size: 1.08rem; animation: rise .6s ease-out .5s both; }
+    .hero-actions { animation: rise .6s ease-out .65s both; }
+    @keyframes logo-in { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+    @keyframes logo-breathe { 0%,100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.04) rotate(-2deg); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+    /* ===== Hero avec photo (déposer hero.avif à la racine du dépôt) ===== */
+    .site-header.hero {
+      min-height: min(78vh, 640px);
+      display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
+      text-align: left; padding: 3rem clamp(1.25rem, 5vw, 4rem) 3rem;
+      color: #fff; border-bottom: none;
+      background:
+        linear-gradient(to top, rgba(74,22,48,.82) 0%, rgba(74,22,48,.42) 55%, rgba(74,22,48,.18) 100%),
+        url("./hero.avif") center / cover no-repeat,
+        var(--plum);
+    }
+    .hero h1 { color: #fff; font-size: clamp(2.4rem, 6.2vw, 4.4rem); max-width: 14ch; margin-bottom: 1rem; }
+    .hero .subtitle { color: rgba(255,255,255,.92); margin: 0 0 1.5rem; max-width: 34rem; font-size: 1.15rem; }
+    .hero .hero-actions { justify-content: flex-start; }
+    .btn-light { background: #fff; background-image: none; color: var(--plum); border-color: #fff; }
+    .btn-light:hover { background: var(--secondary); color: var(--plum-deep); }
+    .btn-ghost { background: transparent; background-image: none; color: #fff; border-color: rgba(255,255,255,.75); }
+    .btn-ghost:hover { background: rgba(255,255,255,.16); color: #fff; }
+
+    /* ===== Écran de chargement : le logo animé, comme dans l'application ===== */
+    .meno-splash {
+      position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 2rem; text-align: center;
+      background:
+        radial-gradient(120% 80% at 50% 0%, #ffd5e1 0%, transparent 60%),
+        linear-gradient(170deg, var(--secondary) 0%, var(--background) 55%, #ffe9e1 100%);
+      animation: splash-fade .5s ease-in 2.3s forwards;
+    }
+    .meno-splash__inner { display: grid; justify-items: center; }
+    .meno-splash__mark {
+      width: 132px; height: 132px; object-fit: contain; opacity: 0;
+      animation: splash-in .9s ease-out forwards, logo-breathe 3.6s ease-in-out .9s infinite;
+    }
+    .meno-splash__word {
+      margin-top: 1.1rem; font-family: var(--font-display); font-size: 1.9rem; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--plum);
+      opacity: 0; animation: rise .6s ease-out .9s forwards;
+    }
+    .meno-splash__bar { margin-top: 1.4rem; width: 116px; height: 4px; border-radius: 999px; background: rgba(138,23,80,.16); overflow: hidden; }
+    .meno-splash__bar span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(135deg, var(--plum), #9d2f63); animation: splash-bar 1.8s ease-out .3s forwards; }
+    @keyframes splash-in { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+    @keyframes splash-bar { to { width: 100%; } }
+    @keyframes splash-fade { to { opacity: 0; visibility: hidden; } }
+
+    /* ===== Boutons ===== */
+    .hero-actions, .links-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1rem; }
+    .links-row { justify-content: flex-start; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; text-align: center;
+      padding: .8rem 1.4rem; border-radius: 999px; border: 1px solid var(--plum);
+      background: linear-gradient(135deg, var(--plum), #9d2f63); color: #fff; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+      transition: background-color .2s, transform .2s;
+    }
+    .btn:hover { background: var(--plum-deep); color: #fff; transform: translateY(-1px); }
+    .btn:disabled { opacity: .6; cursor: wait; transform: none; }
+    .btn-secondary { background: transparent; background-image: none; color: var(--plum); border-color: var(--peach); }
+    .btn-secondary:hover { background: var(--secondary); color: var(--plum-deep); }
+
+    /* ===== Contenu ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 3.5rem; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem; margin-bottom: 1.75rem;
+    }
+    .highlight-card {
+      background: linear-gradient(165deg, var(--card) 0%, var(--secondary) 100%);
+      border-color: var(--peach); box-shadow: var(--shadow-soft); padding: 2rem;
+    }
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.1rem; }
+    .mini-card, .account-box {
+      background: var(--background); border: 1px solid var(--border);
+      border-radius: calc(var(--radius) - 6px); padding: 1.15rem;
+    }
+    .mini-card p { font-size: .95rem; color: var(--muted-foreground); }
+    .account-box { margin-top: 1.25rem; }
+    .text-link { font-weight: 700; }
+
+    /* ===== Formulaire ===== */
+    .signup-form { display: grid; gap: 1.1rem; margin-top: 1.1rem; max-width: 34rem; }
+    .form-group { display: grid; gap: .35rem; }
+    .form-group label { font-weight: 700; font-size: .93rem; color: var(--plum); }
+    .form-group input[type="text"], .form-group input[type="email"] {
+      padding: .75rem .95rem; border-radius: .8rem; border: 1px solid var(--input);
+      background: var(--card); color: var(--foreground); font: inherit; font-size: 1rem;
+    }
+    .form-group input:focus { outline: 3px solid var(--peach); border-color: var(--plum); }
+    .form-group input[aria-invalid="true"] { border-color: var(--alert); }
+    .field-error { color: var(--alert); font-size: .88rem; min-height: 1.2em; margin: 0; }
+    .form-checkboxes { display: grid; gap: .7rem; }
+    .checkbox-item { display: flex; gap: .65rem; align-items: flex-start; font-size: .93rem; cursor: pointer; }
+    .checkbox-item input { margin-top: .3rem; accent-color: var(--plum); width: 1.05rem; height: 1.05rem; flex: none; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { margin: 0; padding: 0; border-radius: .9rem; font-weight: 600; max-width: 34rem; }
+    .form-status[data-state="ok"], .form-status[data-state="info"], .form-status[data-state="error"] { padding: .9rem 1.1rem; }
+    .form-status[data-state="ok"] { background: color-mix(in srgb, var(--ok) 14%, var(--card)); color: var(--ok); border: 1px solid var(--ok); animation: rise .35s ease-out both; }
+    .form-status[data-state="error"] { background: color-mix(in srgb, var(--alert) 12%, var(--card)); color: var(--alert); border: 1px solid var(--alert); }
+    .form-status[data-state="info"] { background: var(--secondary); color: var(--plum-deep); border: 1px solid var(--peach); }
+    .form-note { font-size: .87rem; color: var(--muted-foreground); margin: .85rem 0 0; }
+
+    /* ===== Pied de page ===== */
+    .site-footer { text-align: center; padding: 2.25rem 1.25rem 2.75rem; border-top: 1px solid var(--border); background: var(--card); color: var(--muted-foreground); font-size: .92rem; }
+    .site-footer p { margin-left: auto; margin-right: auto; }
+    .footer-logo { margin: 0 auto .6rem; display: block; }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 760px) {
+      .nav-toggle { display: inline-block; }
+      .nav-links {
+        display: none; width: 100%; flex-direction: column; align-items: flex-start;
+        padding: .5rem 0 .75rem; gap: .2rem;
+      }
+      .nav-links.open { display: flex; }
+      .main-nav { flex-wrap: wrap; }
+      .nav-links li, .nav-links a { width: 100%; }
+      .nav-links a { display: block; padding: .6rem 0; }
+      .nav-links a.btn-nav { text-align: center; margin-top: .35rem; }
+      .card, .highlight-card { padding: 1.35rem; }
+      .links-row .btn, .hero-actions .btn { width: 100%; }
     }
 
-    .form-group input:focus {
-      outline: 2px solid var(--peach);
-      border-color: var(--plum);
-    }
-
-    .form-checkboxes {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .checkbox-item {
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
-      font-size: 0.92rem;
-      cursor: pointer;
-    }
-
-    .form-note {
-      font-size: 0.85rem;
-      color: var(--muted-foreground);
-      margin-top: 0.75rem;
-      margin-bottom: 0;
-    }
-
-    .text-link {
-      font-weight: 700;
-    }
-
-    /* Pied de page */
-    .site-footer {
-      text-align: center;
-      padding: 2.25rem 1.25rem 2.75rem;
-      border-top: 1px solid var(--border);
-      background: var(--card);
-      color: var(--muted-foreground);
-      font-size: 0.9rem;
-    }
-
-    .footer-logo {
-      margin: 0 auto 0.65rem;
-    }
-
-    .footer-links {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .site-logo, .site-header h1, .subtitle, .hero-actions, .form-status { animation: none !important; }
+      .meno-splash { display: none; }
+      .btn { transition: none; }
     }
   </style>
 </head>
 <body>
+  <div class="meno-splash" id="splash" aria-hidden="true">
+    <div class="meno-splash__inner">
+      <img src="./icon-512.png" alt="" class="meno-splash__mark" width="132" height="132" />
+      <div class="meno-splash__word">Meno</div>
+      <div class="meno-splash__bar"><span></span></div>
+    </div>
+  </div>
+  <noscript><style>.meno-splash{display:none}</style></noscript>
+  <script>
+    /* Écran de chargement : affiché à chaque ouverture de la page, retiré après l'animation */
+    setTimeout(function () { var el = document.getElementById("splash"); if (el) el.remove(); }, 2900);
+  </script>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <!-- Menu principal -->
   <nav class="main-nav" aria-label="Navigation principale">
     <a href="#accueil" class="nav-brand">
-      <img src="./favicon%20bonne%20version" alt="Logo Meno mon cycle" class="nav-logo" />
+      <img src="./favicon.png" alt="" class="nav-logo" width="30" height="30" />
       <span>Meno mon cycle</span>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#mon-histoire">Mon histoire</a></li>
       <li><a href="#application">L'application</a></li>
-      <li><a href="#precommande-newsletter" class="btn-nav">Précommande gratuite</a></li>
       <li><a href="#livre-blanc">Livre blanc</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#marketplace">Marketplace</a></li>
       <li><a href="#annuaire">Annuaire</a></li>
+      <li><a href="#precommande-newsletter" class="btn-nav">Précommande gratuite</a></li>
     </ul>
   </nav>
 
-  <!-- En-tête -->
-  <header id="accueil" class="site-header">
-    <img src="./icon-512.png" alt="Emblème Meno mon cycle" class="site-logo" />
-    <h1>Meno mon cycle</h1>
-    <p class="subtitle">Suivi du cycle et des symptômes en douceur, précommande gratuite de l'application, newsletter, livre blanc, blog, marketplace et annuaire.</p>
+  <header id="accueil" class="site-header hero">
+    <h1>Mon cycle, à mon rythme</h1>
+    <p class="subtitle">Suivez votre cycle et vos symptômes en douceur, et réservez gratuitement votre accès à l'application dès son lancement.</p>
     <div class="hero-actions">
-      <a href="#precommande-newsletter" class="btn">Réserver l'accès gratuit au lancement</a>
-      <a href="#livre-blanc" class="btn btn-secondary">Livre blanc téléchargeable</a>
+      <a href="#precommande-newsletter" class="btn btn-light">Réserver mon accès gratuit</a>
+      <a href="#application" class="btn btn-ghost">Découvrir l'application</a>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="contenu">
 
-    <!-- 1. Mon histoire -->
     <section id="mon-histoire" class="card">
       <h2>Mon histoire</h2>
       <p>Présentation claire de mon parcours, de ce qui m'a poussée à lancer Meno mon cycle et de la démarche que je porte au quotidien.</p>
       <p>Ce site propose des informations et des outils d'accompagnement doux. Il ne remplace en aucun cas un avis médical, un diagnostic ou une prise en charge médicale.</p>
     </section>
 
-    <!-- 2. Direction vers l'application -->
     <section id="application" class="card">
       <h2>L'application Meno mon cycle</h2>
-      <p>Suivez votre cycle et vos symptômes en douceur, tout en gardant vos données sur votre téléphone.</p>
+      <p>Choisissez en un geste de noter votre journée ou votre suivi habituel : symptômes placés sur le schéma du corps avec une intensité de 0 à 10, règles, calendrier et rappels.</p>
+      <p>Un compte rendu PDF est prêt pour votre consultation, et des pistes à discuter avec un professionnel, des gestes de soulagement et des ressources sont réunis au même endroit.</p>
+      <p>Votre suivi reste privé : il est conservé sur votre téléphone. Seuls les symptômes du jour et votre précision sont envoyés, sans nom ni identifiant, au moment où vous demandez des conseils.</p>
       <div class="links-row">
-        <a href="#precommande-newsletter" class="btn">S'inscrire pour l'accès au lancement</a>
-        <a href="#lien-vers-application" class="btn btn-secondary">Découvrir l'aperçu de l'application</a>
+        <a href="#precommande-newsletter" class="btn">M'inscrire pour l'accès au lancement</a>
+        <a href="#lien-vers-application" class="btn btn-secondary">Voir l'aperçu de l'application</a>
       </div>
     </section>
 
-    <!-- 3. Précommande gratuite de l'application & Newsletter -->
     <section id="precommande-newsletter" class="card highlight-card">
-      <h2>Précommande gratuite de l'application &amp; newsletter</h2>
-      <p>Inscrivez-vous gratuitement dès maintenant pour être prévenue dès le lancement de l'application et recevoir l'accès prévu à l'ouverture, ainsi que les actualités du projet et la newsletter.</p>
+      <h2>Précommande gratuite &amp; newsletter</h2>
+      <p>Inscrivez-vous gratuitement pour être prévenue dès le lancement, recevoir l'accès prévu à l'ouverture, ainsi que les actualités du projet.</p>
 
-      <form action="#traitement-inscription" method="post" class="signup-form">
+      <form id="signup-form" class="signup-form" novalidate>
         <div class="form-group">
           <label for="prenom">Prénom (facultatif)</label>
           <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" />
@@ -397,35 +311,43 @@
 
         <div class="form-group">
           <label for="email">Adresse e-mail *</label>
-          <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required autocomplete="email" />
+          <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required autocomplete="email" aria-describedby="email-error" />
+          <p class="field-error" id="email-error" role="alert"></p>
         </div>
 
-        <div class="form-checkboxes">
+        <!-- Champ piège anti-robots : ne pas supprimer -->
+        <div class="hp" aria-hidden="true">
+          <label for="site-web">Ne pas remplir</label>
+          <input id="site-web" name="site_web" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <fieldset class="form-checkboxes" style="border:0;padding:0;margin:0;" aria-describedby="choice-error">
+          <legend class="sr-only" style="position:absolute;left:-9999px;">Ce que je souhaite recevoir</legend>
           <label class="checkbox-item">
             <input type="checkbox" name="precommande_app" value="oui" checked />
-            <span><strong>Précommande gratuite de l'application :</strong> je veux recevoir l'accès dès le lancement.</span>
+            <span><strong>Précommande gratuite :</strong> je veux recevoir l'accès à l'application dès le lancement.</span>
           </label>
           <label class="checkbox-item">
             <input type="checkbox" name="newsletter" value="oui" checked />
             <span><strong>Newsletter :</strong> je souhaite recevoir les nouvelles de Meno mon cycle, du livre blanc et du blog.</span>
           </label>
-        </div>
+          <p class="field-error" id="choice-error" role="alert"></p>
+        </fieldset>
 
-        <button type="submit" class="btn">Valider mon inscription gratuite</button>
+        <button type="submit" class="btn" id="submit-btn">Valider mon inscription gratuite</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" data-state="idle"></p>
       </form>
-      <p class="form-note">Inscription gratuite et sans engagement. Aucun diagnostic médical n'est réalisé via ce site.</p>
+      <p class="form-note">Inscription gratuite et sans engagement. Votre adresse sert uniquement à vous prévenir du lancement et à vous envoyer la newsletter ; vous pouvez vous désinscrire à tout moment. Aucun diagnostic médical n'est réalisé via ce site. <a href="#confidentialite">Politique de confidentialité</a></p>
     </section>
 
-    <!-- 4. Livre blanc téléchargeable -->
     <section id="livre-blanc" class="card">
-      <h2>Le livre blanc téléchargeable</h2>
-      <p>Un guide complet en cours de développement pour rassembler les repères clés, les explications claires et les pistes pratiques autour du cycle et du bien-être.</p>
+      <h2>Le livre blanc</h2>
+      <p>Un guide en cours de rédaction pour rassembler les repères clés, des explications claires et des pistes pratiques autour du cycle et du bien-être.</p>
       <div class="links-row">
         <a href="#telechargement-livre-blanc" class="btn">Télécharger le livre blanc</a>
       </div>
     </section>
 
-    <!-- 5. Marketplace & Ouverture de compte -->
     <section id="marketplace" class="card">
       <h2>La marketplace</h2>
       <p>Retrouvez nos sélections bien-être, confort et solutions TENS pour accompagner le quotidien.</p>
@@ -438,64 +360,165 @@
         <article class="mini-card">
           <h3>Sélections du moment</h3>
           <p>Essentiels du quotidien choisis avec soin pour la démarche Meno mon cycle.</p>
-          <a href="#selections" class="btn btn-secondary">Découvrir la sélection</a>
+          <a href="#selections" class="btn btn-secondary">Voir la sélection</a>
         </article>
       </div>
-
       <div id="compte-marketplace" class="account-box">
         <h3>Compte marketplace</h3>
-        <p>Ouvrez un compte pour accéder à vos achats, vos favoris et votre espace sur la marketplace.</p>
+        <p>Ouvrez un compte pour retrouver vos achats, vos favoris et votre espace sur la marketplace.</p>
         <div class="links-row">
           <a href="#ouvrir-un-compte" class="btn">Ouvrir un compte</a>
-          <a href="#se-connecter" class="btn btn-secondary">Se connecter</a>
+          <a href="#se-connecter" class="btn btn-secondary">Me connecter</a>
         </div>
       </div>
     </section>
 
-    <!-- 6. Blog (SEO) -->
     <section id="blog" class="card">
       <h2>Le blog</h2>
-      <p>Des articles pensés pour le référencement (SEO) et pour répondre aux questions concrètes sur le cycle, les symptômes, le confort et le bien-être.</p>
+      <p>Des articles pour répondre aux questions concrètes sur le cycle, les symptômes, le confort et le bien-être.</p>
       <div class="grid-cards">
         <article class="mini-card">
-          <h3>Article 1 — Comprendre son cycle et ses symptômes</h3>
-          <p>Repères simples et accessibles pour observer ses ressentis au fil du temps.</p>
+          <h3>Comprendre son cycle et ses symptômes</h3>
+          <p>Repères simples pour observer ses ressentis au fil du temps.</p>
           <a href="#article-1" class="text-link">Lire l'article</a>
         </article>
         <article class="mini-card">
-          <h3>Article 2 — Bien-être, chaleur et TENS au quotidien</h3>
+          <h3>Bien-être, chaleur et TENS au quotidien</h3>
           <p>Tour d'horizon pratique des solutions de confort non médicamenteuses.</p>
           <a href="#article-2" class="text-link">Lire l'article</a>
         </article>
         <article class="mini-card">
-          <h3>Article 3 — Préparer ses échanges et s'informer</h3>
-          <p>Conseils utiles pour structurer ses notes et ses questions.</p>
+          <h3>Préparer ses échanges et s'informer</h3>
+          <p>Conseils pour structurer ses notes et ses questions.</p>
           <a href="#article-3" class="text-link">Lire l'article</a>
         </article>
       </div>
     </section>
 
-    <!-- 7. Annuaire des praticiens et soutiens -->
     <section id="annuaire" class="card">
       <h2>Annuaire des praticiens &amp; soutiens</h2>
-      <p>Un annuaire en développement pour réunir les praticiens, professionnels et personnes qui soutiennent la démarche Meno mon cycle.</p>
+      <p>Un annuaire en construction pour réunir les praticiens, professionnels et personnes qui soutiennent la démarche Meno mon cycle.</p>
       <div class="links-row">
         <a href="#voir-annuaire" class="btn">Consulter l'annuaire</a>
-        <a href="#soutenir-ou-apparaitre" class="btn btn-secondary">Rejoindre / Soutenir la démarche</a>
+        <a href="#soutenir-ou-apparaitre" class="btn btn-secondary">Rejoindre ou soutenir</a>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <img src="./favicon%20bonne%20version" alt="Icône Meno mon cycle" class="footer-logo" />
+    <img src="./favicon.png" alt="" class="footer-logo" width="30" height="30" />
     <p>Meno mon cycle — Espace informatif, précommande gratuite, application, livre blanc, blog, marketplace et annuaire.</p>
-    <p class="footer-links">
+    <p>
       <a href="#pinterest">Pinterest</a> ·
       <a href="#mentions-legales">Mentions légales</a> ·
       <a href="#confidentialite">Confidentialité</a>
     </p>
   </footer>
 
+  <script>
+    (function () {
+      "use strict";
+
+      /* ===== RÉGLAGE : adresse qui reçoit les inscriptions =====
+         GitHub Pages ne peut pas enregistrer un formulaire tout seul.
+         Crée un formulaire gratuit chez Formspree (ou Brevo, Mailchimp...),
+         puis colle ici l'adresse fournie, par exemple :
+         "https://formspree.io/f/xxxxxxxx"
+         Tant que ce champ est vide, le site prévient la visiteuse
+         que l'inscription n'est pas encore active. */
+      var FORM_ENDPOINT = "";
+
+      /* --- Menu mobile --- */
+      var toggle = document.querySelector(".nav-toggle");
+      var links = document.getElementById("nav-links");
+      toggle.addEventListener("click", function () {
+        var open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      links.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      /* --- Lien actif dans le menu selon la section visible --- */
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a:not(.btn-nav)"));
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              navLinks.forEach(function (a) {
+                a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
+              });
+            }
+          });
+        }, { rootMargin: "-35% 0px -55% 0px" });
+        document.querySelectorAll("main section[id]").forEach(function (s) { observer.observe(s); });
+      }
+
+      /* --- Formulaire d'inscription --- */
+      var form = document.getElementById("signup-form");
+      var email = document.getElementById("email");
+      var emailError = document.getElementById("email-error");
+      var choiceError = document.getElementById("choice-error");
+      var status = document.getElementById("form-status");
+      var btn = document.getElementById("submit-btn");
+
+      function setStatus(state, message) {
+        status.setAttribute("data-state", state);
+        status.textContent = message;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        emailError.textContent = "";
+        choiceError.textContent = "";
+        email.removeAttribute("aria-invalid");
+        setStatus("idle", "");
+
+        // Champ piège : un robot le remplit, une personne non.
+        if (form.site_web.value) { return; }
+
+        var value = email.value.trim();
+        var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+        if (!valid) {
+          emailError.textContent = "Saisissez une adresse e-mail valide, par exemple prenom@exemple.fr.";
+          email.setAttribute("aria-invalid", "true");
+          email.focus();
+          return;
+        }
+        if (!form.precommande_app.checked && !form.newsletter.checked) {
+          choiceError.textContent = "Cochez au moins une option pour valider votre inscription.";
+          return;
+        }
+
+        if (!FORM_ENDPOINT) {
+          setStatus("info", "Les inscriptions ouvrent très bientôt. Revenez dans quelques jours : votre adresse n'a pas été enregistrée.");
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Envoi en cours…";
+        fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form)
+        }).then(function (response) {
+          if (!response.ok) { throw new Error("http " + response.status); }
+          form.reset();
+          form.precommande_app.checked = true;
+          form.newsletter.checked = true;
+          setStatus("ok", "Merci" + (form.prenom.value ? "" : "") + " ! Votre inscription est bien enregistrée. Nous vous écrirons dès le lancement.");
+        }).catch(function () {
+          setStatus("error", "L'inscription n'a pas pu être envoyée. Vérifiez votre connexion et réessayez dans un instant.");
+        }).finally(function () {
+          btn.disabled = false;
+          btn.textContent = "Valider mon inscription gratuite";
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
