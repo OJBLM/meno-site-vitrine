@@ -166,8 +166,8 @@ section[id], header[id] { scroll-margin-top: 5rem; }
   .hero-logo {
     width: 180px;
   }
+}
 
-  
 /* ===== Écran de chargement : le logo animé, comme dans l'application ===== */
 .meno-splash {
   position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 2rem; text-align: center;
@@ -275,7 +275,7 @@ section[id], header[id] { scroll-margin-top: 5rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .site-logo, .site-header h1, .subtitle, .hero-actions, .form-status { animation: none !important; }
+  .site-logo, .hero-logo, .site-header h1, .subtitle, .hero-actions, .form-status { animation: none !important; }
   .meno-splash { display: none; }
   .btn { transition: none; }
 }
