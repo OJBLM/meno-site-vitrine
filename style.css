@@ -327,11 +327,11 @@ section[id], header[id] { scroll-margin-top: 5rem; }
 .link-card::after { content: "\203A"; font-size: 1.8rem; color: var(--plum); line-height: 1; }
 .intro { font-size: 1.1rem; }
 
-/* ===== Nom de marque dans le texte ===== */
 .meno-brand {
-  font-family: "Varela Round", ui-rounded, var(--font-sans);
+  display: inline-block;
+  font-family: "Varela Round", "Nunito", ui-rounded, sans-serif;
   color: var(--plum);
-  font-size: 1.25em;
+  font-size: 1.35em;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
 }
