@@ -331,5 +331,7 @@ section[id], header[id] { scroll-margin-top: 5rem; }
 .meno-brand {
   font-family: "Varela Round", ui-rounded, var(--font-sans);
   color: var(--plum);
-  font-weight: 400;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.1;
 }
